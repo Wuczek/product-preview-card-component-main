@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+    --darkcyan:hsl(158, 36%, 37%);
+    --cream:hsl(30, 38%, 92%);
+    --verydarkblue:hsl(212, 21%, 14%);
+    --darkgrayishblue:hsl(228, 12%, 48%);
+    --white:hsl(0, 0%, 100%);
+}
+
+/* CSS RESET */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /* LAYOUT */
+
+body {
+    font-size: 14px;
+    background-color: var(--cream);
+    display: grid;
+    place-content: center;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: 0.8em;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text {
+    padding: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text p:first-child{
+    letter-spacing: 0.4em;
+    font-size: 0.7em;
+}
+
+.font {
+    font-family: 'Fraunces', serif;
+}
+
+.gray-text {
+    color: var(--darkgrayishblue);
+}
+
+h2 {
+    color: var(--verydarkblue);
+    font-size: 2em;
+    line-height: 0.9em;
+    margin-top: 0.3em;
+}
+
+.text p:nth-child(3){
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+.pricing {
+    margin-top: 1em;
+}
+
+.pricing p {
+    display: inline-block;
+}
+
+.pricing p:first-child{
+    color: var(--darkcyan);
+    font-size: 1.7em;
+    letter-spacing: 1px;
+}
+
+.pricing p:nth-child(2){
+    font-size: 0.8em;
+    position: relative;
+    left: 10px;
+    bottom: 3px;
+    text-decoration: line-through;
+}
+
+.text button {
+    margin-top: 0.8em;
+    width: 100%;
+    background-color: var(--darkcyan);
+    border: none;
+    padding: 9px 0;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: var(--white);
+    border-radius: 5px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+button img {
+    width: 11px;
+}
+
+button:hover {
+    background-color: hsl(158, 47%, 21%);
+    transform: scale(1.05);
+}
+
+@media screen and (min-width:675px) {
+  main{
+    flex-direction: row;
+    max-width: 70%;
+    flex-grow: 1 1;
+  }
+
+  picture {
+    min-width: 50%;
+  }
+}
+
+@media screen and (min-width:930px) {
+  main {
+    height: 100%;
+    align-items: center;
+  }
+}
+
